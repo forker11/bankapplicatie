@@ -6,3 +6,18 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/target/bankapplicatie-1.0-SNAPSHOT.jar
+/.idea/compiler.xml
+/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+/.idea/sonarlint/issuestore/index.pb
+/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+/.idea/jarRepositories.xml
+/target/classes/logback.xml
+/target/test-classes/LogbackTests.class
+/target/classes/nl/jamiesoft/Menu.class
+/.idea/misc.xml
+/target/maven-archiver/pom.properties
+/.idea/runConfigurations.xml
+/.idea/vcs.xml

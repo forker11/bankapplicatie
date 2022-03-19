@@ -1,5 +1,6 @@
 package nl.jamiesoft;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,10 @@ class MenuTests {
     }
 
     @Test
-    void showMenu() {
-        menu.showMenu(customerName,accountNr);
+    void givenWelcomeMessage_whenShowMenu_thenWelcomeStringIsReturned() {
+
+        String underTest = menu.showWelcomeMessage(customerName,accountNr);
+
+        Assertions.assertThat(underTest).isEqualTo("  Welkom Jamie met rekeningnr 888989");
     }
 }

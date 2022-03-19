@@ -35,4 +35,5 @@ class AccountTests {
 
         Assertions.assertThat(account.getCustomerName()).isEqualTo("Jamie");
     }
+
 }

@@ -4,6 +4,18 @@ public class Account {
     private String customerName;
     private Integer accountNr;
 
+    public Account() {
+        this("Geen naam opgegeven",0);
+    }
+
+    public Account(String customerName) {
+        this(customerName, 0);
+    }
+
+    public Account(Integer accountNr) {
+        this("Geen naam opgegeven ",accountNr);
+    }
+
     public Account(String customerName,Integer accountNr) {
         setCustomerName(customerName);
         setAccountNr(accountNr);

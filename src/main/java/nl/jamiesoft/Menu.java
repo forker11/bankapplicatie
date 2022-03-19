@@ -6,12 +6,10 @@ package nl.jamiesoft;
  */
 
 public class Menu {
-    String welcomeMessage;
+
     public String showWelcomeMessage(String customerName, Integer accountNr) {
 
-        welcomeMessage = String.format("  Welkom %s met rekeningnr %s",
+        return String.format("  Welkom %s met rekeningnr %s",
                 customerName, accountNr);
-
-        return welcomeMessage;
     }
 }

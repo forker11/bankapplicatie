@@ -1,8 +1,9 @@
 package nl.jamiesoft;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class AccountTests {
     private Account account;
@@ -13,27 +14,30 @@ class AccountTests {
     }
 
     @Test
-    void instiateWithNameAndAccountNr_whenInitalised_ThenJamieAnd1234IsSet() {
+    void instantiateWithNameAndAccountNr_whenInitalised_ThenJamieAnd1234IsSet() {
         account = new Account("Jamie",1234);
 
-        Assertions.assertThat(account.getCustomerName()).isEqualTo("Jamie");
-        Assertions.assertThat(account.getAccountNr()).isEqualTo(1234);
+        assertThat(account.getCustomerName()).isEqualTo("Jamie");
+        assertThat(account.getAccountNr()).isEqualTo(1234);
     }
 
     @Test
-    void instiateWithNameAndAccountNr_whenInitalised_ThenFailsTest() {
+    void instantiateWithNameAndAccountNr_whenInitalised_ThenFailsTest() {
         account = new Account("Jamie",1234);
 
-        Assertions.assertThat(account.getCustomerName()).isNotEqualTo("Jami");
-        Assertions.assertThat(account.getAccountNr()).isNotEqualTo(123);
+        assertThat(account.getCustomerName()).isNotEqualTo("Jami");
+        assertThat(account.getAccountNr()).isNotEqualTo(123);
     }
 
     @Test
-    void setNameAndAccountnr_whenSetCustomerName_thenCustomerNameIsJamie() {
+    void givenAccountBalance_whenCheckBalance_thenReturnsCorrectBalance() {
+        Account account = new Account("Jamie",1234);
+        Double underTest;
 
-        account = new Account("Jamie");
+        underTest = account.getBalance();
 
-        Assertions.assertThat(account.getCustomerName()).isEqualTo("Jamie");
+        assertThat(underTest).isEqualTo(1001.21);
+
     }
 
 }

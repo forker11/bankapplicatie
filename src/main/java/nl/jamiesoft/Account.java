@@ -1,6 +1,7 @@
 package nl.jamiesoft;
 
 public class Account {
+    private Double balance = 1001.21;
     private String customerName;
     private Integer accountNr;
 
@@ -19,6 +20,14 @@ public class Account {
     public Account(String customerName,Integer accountNr) {
         setCustomerName(customerName);
         setAccountNr(accountNr);
+    }
+
+    public String checkBalance() {
+        return String.format("Je saldo is %s",this.balance.toString());
+    }
+
+    public Double getBalance() {
+        return this.balance;
     }
 
     public String getCustomerName() {

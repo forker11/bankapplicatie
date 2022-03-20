@@ -21,3 +21,5 @@
 /target/maven-archiver/pom.properties
 /.idea/runConfigurations.xml
 /.idea/vcs.xml
+target
+.idea

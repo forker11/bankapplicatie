@@ -16,10 +16,18 @@ class MenuTests {
     }
 
     @Test
-    void givenWelcomeMessage_whenShowMenu_thenWelcomeStringIsReturned() {
+    void givenWelcomeMessage_whenShowWelcomeMessage_thenWelcomeStringIsReturned() {
 
         String underTest = menu.showWelcomeMessage(customerName,accountNr);
 
         Assertions.assertThat(underTest).isEqualTo("  Welkom Jamie met rekeningnr 888989");
+    }
+
+    @Test
+    void whenShowMenu_thenReturnMenuString() {
+
+        menu.initMenu();
+
+//        Assertions.assertThat(underTest).isEqualTo(" Wat wil je doen?\")
     }
 }

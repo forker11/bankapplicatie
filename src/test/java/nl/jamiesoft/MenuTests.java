@@ -1,18 +1,21 @@
 package nl.jamiesoft;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 class MenuTests {
 
     private Menu menu;
-    private String customerName = "Jamie";
-    private Integer accountNr = 888989;
+    private String customerName;
+    private Integer accountNr;
 
     @BeforeEach
     public void init() {
         menu = new Menu();
+        customerName = "Jamie";
+        accountNr = 888989;
     }
 
     @Test
@@ -20,14 +23,19 @@ class MenuTests {
 
         String underTest = menu.showWelcomeMessage(customerName,accountNr);
 
-        Assertions.assertThat(underTest).isEqualTo("  Welkom Jamie met rekeningnr 888989");
+        assertThat(underTest).isEqualTo("  Welkom Jamie met rekeningnr 888989");
     }
 
     @Test
-    void whenShowMenu_thenReturnMenuString() {
+    void givenOptionAorLowerCaseA_whenGetUserOption_thenAIsReturned() {
 
+        char underTest = menu.getUserOption();
+
+        assertThat(underTest).isEqualTo('A');
+    }
+
+    @Test
+    void testInitMenu(){
         menu.initMenu();
-
-//        Assertions.assertThat(underTest).isEqualTo(" Wat wil je doen?\")
     }
 }

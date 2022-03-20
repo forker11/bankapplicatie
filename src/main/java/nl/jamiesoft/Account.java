@@ -13,7 +13,7 @@ public class Account {
     }
 
     public Account(Integer accountNr) {
-        this("Geen naam opgegeven ",accountNr);
+        this("Geen naam opgegeven",accountNr);
     }
 
     public Account(String customerName,Integer accountNr) {

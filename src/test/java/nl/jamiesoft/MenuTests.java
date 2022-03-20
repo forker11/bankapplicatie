@@ -8,20 +8,18 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class MenuTests {
 
     private Menu menu;
-    private String customerName;
-    private Integer accountNr;
+    private Account account;
 
     @BeforeEach
     public void init() {
-        menu = new Menu();
-        customerName = "Jamie";
-        accountNr = 888989;
+        account = new Account("Jamie",888989);
+        menu = new Menu(account);
     }
 
     @Test
     void givenWelcomeMessage_whenShowWelcomeMessage_thenWelcomeStringIsReturned() {
 
-        String underTest = menu.showWelcomeMessage(customerName,accountNr);
+        String underTest = menu.showWelcomeMessage(account.getCustomerName(),account.getAccountNr());
 
         assertThat(underTest).isEqualTo("  Welkom Jamie met rekeningnr 888989");
     }

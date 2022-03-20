@@ -11,7 +11,12 @@ import java.util.Scanner;
  */
 
 public class Menu {
+    private Account account;
     private static Logger log = LoggerFactory.getLogger(Menu.class);
+
+    public Menu(Account account) {
+        this.account = account;
+    }
 
     public void initMenu(){
         char selectedOption = '\u0000';
@@ -24,7 +29,7 @@ public class Menu {
     }
 
     public String showWelcomeMessage(String customerName, Integer accountNr) {
-        return String.format("Welkom %s met rekeningnr %s\n\nMaak een keuze:\n",
+        return String.format("Welkom %s met rekeningnr %s%n%nMaak een keuze:%n",
                 customerName, accountNr);
     }
 
@@ -36,13 +41,13 @@ public class Menu {
             sb.append("D. Vorige transactie bekijken\n");
             sb.append("E. Rente berekenen\n");
             sb.append("F. Menu tonen\n");
-            sb.append("Q. Afsluiten\n\n");
-            sb.append("Kies een optie:");
+            sb.append("Q. Afsluiten\n");
 
             return sb.toString();
     }
 
     public char getUserOption() {
+        System.out.println("\nKies een optie, f voor menu");
         Scanner scanner = new Scanner(System.in);
         char optionInput = scanner.next().charAt(0); // Get first character of input
         char option = Character.toUpperCase(optionInput);
@@ -55,7 +60,7 @@ public class Menu {
     public void executeSelectedOption(char selectedOption) {
         switch(selectedOption){
             case 'A':
-                System.out.println("saldo bekijken");
+                System.out.println(account.checkBalance());
                 break;
             case 'B':
                 System.out.println("Geld storten");
